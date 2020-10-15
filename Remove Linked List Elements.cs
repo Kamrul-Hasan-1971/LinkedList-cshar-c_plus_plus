@@ -12,30 +12,33 @@ c#:
  *     }
  * }
  */
-public class Solution {
+public class Solution
+{
     public ListNode RemoveElements(ListNode head, int val)
-	{
-		while(head!=null)
+    {
+        while(head!=null)
         {
-			if (head.val == val)
-			{
-				head = head.next;
-			}
-			else break;
+            if (head.val == val)
+            {
+                head = head.next;
+            }
+            else
+                break;
         }
-		ListNode pre = new ListNode(val + 1,head),ans = head;
+        ListNode pre = new ListNode(val + 1,head),ans = head;
 
-		while(head!=null)
+        while(head!=null)
         {
-			if (head.val == val)
-			{
-				pre.next = head.next;
-			}
-			else pre = head;
-			head = head.next;
+            if (head.val == val)
+            {
+                pre.next = head.next;
+            }
+            else
+                pre = head;
+            head = head.next;
         }
-		return ans;
-	}
+        return ans;
+    }
 }
 
 ------------------------------------------------------------------------------------
@@ -56,12 +59,14 @@ class Solution
 public:
     ListNode *removeElements(ListNode *head, int val)
     {
-        while(head!=NULL) {
-            if(head->val==val) 
+        while(head!=NULL)
+        {
+            if(head->val==val)
             {
                 head=head->next;
             }
-            else break;
+            else
+                break;
         }
         ListNode *pre = new ListNode(-1);
         pre->next = head;
@@ -75,12 +80,14 @@ public:
                 {
                     pre->next=head->next;
                 }
-                else{ 
+                else
+                {
                     //cout<<"pre"<<endl;
                     pre->next = NULL;
-                    }
+                }
             }
-            else pre = head;
+            else
+                pre = head;
             head = head->next;
         }
         return ans;
