@@ -41,6 +41,26 @@ public class Solution
     }
 }
 
+c#:
+_________________________________________________________________________________________
+public class Solution {
+    public ListNode RemoveElements(ListNode head, int val) {
+        while(head!=null)
+        {
+            if (head.val == val) head = head.next;
+            else break;
+        }
+        ListNode ans = head;
+
+        while(head!=null && head.next!=null)
+        {
+            if (head.next.val == val)  head.next = head.next.next;
+            else head = head.next;
+        }
+        return ans;
+    }
+}
+
 ------------------------------------------------------------------------------------
 c++:
 
