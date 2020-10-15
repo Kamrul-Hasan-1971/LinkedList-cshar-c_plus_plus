@@ -82,7 +82,6 @@ public:
                 }
                 else
                 {
-                    //cout<<"pre"<<endl;
                     pre->next = NULL;
                 }
             }
