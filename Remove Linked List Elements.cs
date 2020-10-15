@@ -17,24 +17,14 @@ public class Solution
     public ListNode RemoveElements(ListNode head, int val)
     {
         while(head!=null)
-        {
-            if (head.val == val)
-            {
-                head = head.next;
-            }
-            else
-                break;
+            if (head.val == val) head = head.next;
+            else break;
         }
         ListNode pre = new ListNode(val + 1,head),ans = head;
-
         while(head!=null)
         {
-            if (head.val == val)
-            {
-                pre.next = head.next;
-            }
-            else
-                pre = head;
+            if (head.val == val) pre.next = head.next;
+            else pre = head;
             head = head.next;
         }
         return ans;
@@ -43,18 +33,19 @@ public class Solution
 
 c#:
 _________________________________________________________________________________________
-public class Solution {
-    public ListNode RemoveElements(ListNode head, int val) {
+public class Solution
+{
+    public ListNode RemoveElements(ListNode head, int val)
+    {
         while(head!=null)
         {
             if (head.val == val) head = head.next;
             else break;
         }
         ListNode ans = head;
-
         while(head!=null && head.next!=null)
         {
-            if (head.next.val == val)  head.next = head.next.next;
+            if (head.next.val == val) head.next = head.next.next;
             else head = head.next;
         }
         return ans;
@@ -63,8 +54,10 @@ public class Solution {
 
 c#:(recursive)
 __________________________________________________________________________________
-public class Solution {
-    public ListNode RemoveElements(ListNode head, int val) {
+public class Solution
+{
+    public ListNode RemoveElements(ListNode head, int val)
+    {
         if(head==null) return null;
         head.next = RemoveElements(head.next, val);
         return (head.val==val)? head.next:head;
@@ -91,12 +84,8 @@ public:
     {
         while(head!=NULL)
         {
-            if(head->val==val)
-            {
-                head=head->next;
-            }
-            else
-                break;
+            if(head->val==val) head=head->next;
+            else break;
         }
         ListNode *pre = new ListNode(-1);
         pre->next = head;
@@ -105,18 +94,10 @@ public:
         while (head != NULL)
         {
             if (head->val == val)
-            {
-                if(head->next!=NULL)
-                {
-                    pre->next=head->next;
-                }
-                else
-                {
-                    pre->next = NULL;
-                }
+                if(head->next!=NULL) pre->next=head->next;
+                else pre->next = NULL;
             }
-            else
-                pre = head;
+            else pre = head;
             head = head->next;
         }
         return ans;
