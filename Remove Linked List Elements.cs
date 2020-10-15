@@ -61,6 +61,16 @@ public class Solution {
     }
 }
 
+c#:(recursive)
+__________________________________________________________________________________
+public class Solution {
+    public ListNode RemoveElements(ListNode head, int val) {
+        if(head==null) return null;
+        head.next = RemoveElements(head.next, val);
+        return (head.val==val)? head.next:head;
+    }
+}
+
 ------------------------------------------------------------------------------------
 c++:
 
